@@ -1,8 +1,16 @@
+using System.ComponentModel.DataAnnotations;       
+using System.ComponentModel.DataAnnotations.Schema;  
+
+
 namespace ContosoPizza.Models;
 
 public class Pizza
 {
-    public int Id { get; set; }
+    [Key]
+    [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+    public int? Id { get; set; }
+    [Required] 
     public string? Name { get; set; }
+    [Required]
     public bool IsGlutenFree { get; set; }
 }
